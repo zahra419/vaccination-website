@@ -1,9 +1,9 @@
 function ServerError(){
     return(
-        <>
-        <h1>500</h1>
-        <div>Erreur de Serveur</div>
-        </>
+        <div className="error-page">
+        <h1 className="error-code">500</h1>
+        <div className="error-msg">Erreur de Serveur</div>
+        </div>
     )
 }
 export default ServerError;

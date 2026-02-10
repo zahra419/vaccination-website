@@ -1,0 +1,86 @@
+/* Wrapper like a card */
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.12);
+  overflow-x: auto;
+}
+.table-title{
+  color:#4A90E2;
+  padding-bottom: 0.5rem;
+}
+/* Table base */
+.vaccination-table {
+  width: 70%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #2C3E50;
+}
+
+/* Header */
+.vaccination-table thead th {
+  background: linear-gradient(135deg, #4A90E2, #6FB3FF);
+  color: #ffffff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+
+
+.vaccination-table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.vaccination-table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Body rows */
+.vaccination-table tbody tr {
+  background: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.vaccination-table tbody tr:hover {
+  background: #F0F6FF;
+}
+
+/* Cells */
+.vaccination-table td {
+  padding: 12px;
+  border-bottom: 1px solid #E3ECF8;
+  vertical-align: middle;
+}
+
+/* Last row cleanup */
+.vaccination-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Actions */
+.vaccination-table td:last-child {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Status badges (reuse from cards) */
+.status {
+  display: inline-block;
+  width: 40%;        /* makes it hug the content */
+  padding: 2px ;             /* very tight padding */
+  border-radius: 15px;          /* rounded but not huge */
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 0.5;               /* removes extra vertical space */
+  text-align: center;
+  white-space: nowrap; 
+  margin: 1em;
+}
+
+.status.Done { background: #7ED321; color: #fff; }
+.status.Upcoming { background: #F5A623; color: #fff; }
+.status.Overdue { background: #E74C3C; color: #fff; }

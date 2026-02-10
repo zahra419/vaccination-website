@@ -1,12 +1,20 @@
 package com.example.demo.repository;
-import com.example.demo.model.User;
+import com.example.demo.dto.LoginDto;
+import com.example.demo.model.Users;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
 
-    // JPQL join query to fetch user and roles
-    @Query("SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.username = :username")
-    User findByUsernameWithRoles(@Param("username") String username);
+@Repository
+public interface UserRepository extends JpaRepository<Users, Long> {
+
+    // Custom query to fetch only the fields needed for login
+   @Query("SELECT new com.example.demo.dto.LoginDto(u.cin, u.password, r.role_name,u.full_name) " +
+       "FROM Users u JOIN u.role r " +"WHERE u.cin = :cin")
+    Optional<LoginDto> findUserForLogin(@Param("cin") String cin);
 }

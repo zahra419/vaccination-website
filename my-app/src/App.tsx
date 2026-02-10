@@ -7,6 +7,9 @@ import Login from './pages/Login'
 import PrivateRoute from './route/PrivateRoute'
 import Layout from './components/layout'
 import NotFound from './pages/notfound'
+import ServerError from './pages/servererror'
+import ChildDetails from './pages/ChilddetailsPage'
+import SchedulePage from './pages/SchedulePage'
 
 /* add private route to doctor, dashboard,patient*/
 function App() {
@@ -17,7 +20,10 @@ function App() {
      <Route path='/doctor' element={<PrivateRoute role='doctor'><Layout><Doctor/></Layout></PrivateRoute>} />
      <Route path='/dba' element={<PrivateRoute role='dba'><Layout><Dba/></Layout></PrivateRoute>} />
      <Route path='/patient' element={<PrivateRoute role='patient'><Layout><Patient/></Layout></PrivateRoute>}/>
+     <Route path='/patient/:id' element={<Layout><ChildDetails/></Layout>}/>
      <Route path='*' element={<NotFound/>}/>
+     <Route path='/patient/:id/schedule' element={<Layout><SchedulePage/></Layout>}/>
+     <Route path='/server-error' element={<ServerError/>} />
     </Routes>
   )
 }

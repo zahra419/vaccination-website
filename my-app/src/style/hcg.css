@@ -1,0 +1,152 @@
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap:0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 0.5em;
+  padding: 1em;
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(107, 114, 128);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(74, 144, 226, 0.25);
+}
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.btn-primary , .btn-secondary{
+  width: 12em;
+  padding: 0.375em 0.5em;
+  text-align: center;
+  font-size: 0.75rem;
+  outline: 2px solid transparent;
+  border: 1px solid rgba(253, 253, 253, 0.363);
+}
+.btn-secondary {
+  background: transparent;
+  color: #4A90E2;             
+  border: 2px solid #4A90E2;
+  transition: all 0.2s ease;
+}
+.appt-date{
+  align-self: stretch;    
+  display: flex;
+  align-items: last baseline;
+}
+.card-icon{
+  align-self: center;
+  object-fit: contain;
+}
+.card-info{
+  display: flex;
+  flex-direction: row;
+  gap:1em;
+}
+/*.card {
+  display: flex;
+  flex-direction: row;  
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5em;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(107, 114, 128);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+
+.card-header {
+  background: linear-gradient(135deg, #4A90E2, #6FB3FF);
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.done {
+  background: #7ED321;
+  color: #fff;
+}
+
+.status.cancelled {
+  background: #E74C3C;
+  color: #fff;
+}
+
+.status.upcoming {
+  background: #F5A623;
+  color: #fff;
+}
+
+
+.card-body {
+  padding: 10px;
+  background: #F5F9FF;
+}
+
+.card-body p {
+  flex: 1;
+  margin: 2px 0;
+  font-size: 14px;
+  color: #2C3E50;
+}
+
+
+
+
+/*.btn-primary , .btn-secondary{
+  width: 15em;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  outline: 2px solid transparent;
+  border: 1px solid rgba(253, 253, 253, 0.363);
+}
+
+.btn-primary:hover {
+  background: #357ABD;
+}
+
+
+
+.btn-secondary:hover {
+  background: #4A90E2;
+  color: #fff;
+}
+
+
+.btn-secondary:active {
+  transform: scale(0.96);
+}
+
+
+.btn-secondary:disabled {
+  border-color: #B0C9EA;
+  color: #B0C9EA;
+  cursor: not-allowed;
+  background: transparent;
+}*/

@@ -21,10 +21,11 @@ public class JwtUtil {
     }
 
     // Generate JWT token
-    public String generateToken(String username,String role) {
+    public String generateToken(String cin,String role,String full_name) {
         return Jwts.builder()
-                .setSubject(username)
+                .setSubject(cin)
                 .claim("role", role)
+                .claim("full_name", full_name)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
@@ -61,4 +62,6 @@ public class JwtUtil {
         final String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
+
+    
 }
