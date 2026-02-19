@@ -1,3 +1,9 @@
+.cards-container{
+  width: 95%;
+  margin: 1rem 4rem;
+  max-height: 20rem;
+  overflow-y: auto;
+}
 .card{
   display: flex;
   flex-direction: row;
@@ -5,7 +11,7 @@
   align-items: stretch;
   gap:0.5em;
   margin-bottom: 0.5em;
-  border-radius: 0.5em;
+  border-radius: 4px;
   padding: 1em;
   background: #ffffff;
   font-family: "Segoe UI", sans-serif;
@@ -50,103 +56,113 @@
   flex-direction: row;
   gap:1em;
 }
-/*.card {
-  display: flex;
-  flex-direction: row;  
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 0.5em;
-  border-radius: 0.5rem;
+/* inputs */
+.add-vaccine-form input {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d6e2f0;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-vaccine-form input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
+}
+/* form styling */
+.add-vaccine-form {
   padding: 1rem;
-  background: #ffffff;
-  font-family: "Segoe UI", sans-serif;
-  color: rgb(107, 114, 128);
-  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-
-
-
-.card-header {
-  background: linear-gradient(135deg, #4A90E2, #6FB3FF);
-  color: #fff;
-  padding: 16px;
+  background: #f9fbfd;
+  border-radius: 4px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex-direction: column;
+  box-shadow: inset 0 0 0 1px #e5edf5;
+  width: 90%;
+  margin: 1.5rem auto;
+}
+.add-btn{
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+.form-actions{
+  display: flex;
+  flex-direction: row;
+  gap: 0.75em;
 }
 
+.date-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
 
+.date-picker input[type="date"] {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.vaccine-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
 .status {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+  color: gray;
+  font-weight:600;
 }
 
-.status.done {
-  background: #7ED321;
-  color: #fff;
+.inline-views{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0 4rem;
+  gap: 0.5em;
+  width: 95%;
+
+}
+.inline-views > *{
+  margin: 0 0 1rem 0;
+}
+.info-text{
+  color: #7a828a;
+}
+/* style search input */
+.search-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center; 
+  max-width: 400px;
+  margin-bottom: 1rem;
 }
 
-.status.cancelled {
-  background: #E74C3C;
-  color: #fff;
+.search-input input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem; /* space for icon on right */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-.status.upcoming {
-  background: #F5A623;
-  color: #fff;
+.search-input button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #999;
+  /* allows clicking input without blocking */
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
 }
-
-
-.card-body {
-  padding: 10px;
-  background: #F5F9FF;
-}
-
-.card-body p {
-  flex: 1;
-  margin: 2px 0;
-  font-size: 14px;
-  color: #2C3E50;
-}
-
-
-
-
-/*.btn-primary , .btn-secondary{
-  width: 15em;
-  border-radius: 0.5rem;
-  padding: 0.375rem 0.5rem;
-  text-align: center;
-  font-size: 0.75rem;
-  outline: 2px solid transparent;
-  border: 1px solid rgba(253, 253, 253, 0.363);
-}
-
-.btn-primary:hover {
-  background: #357ABD;
-}
-
-
-
-.btn-secondary:hover {
-  background: #4A90E2;
-  color: #fff;
-}
-
-
-.btn-secondary:active {
-  transform: scale(0.96);
-}
-
-
-.btn-secondary:disabled {
-  border-color: #B0C9EA;
-  color: #B0C9EA;
-  cursor: not-allowed;
-  background: transparent;
-}*/

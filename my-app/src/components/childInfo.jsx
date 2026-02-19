@@ -1,19 +1,36 @@
+import { useEffect, useState } from 'react';
 import boy_toddler from '../assets/boy_toddler.svg'
 import girl_toddler from '../assets/girl_toddler.svg'
+import axios from 'axios';
 
-function ChildInfo(){
-    const info={gender:'f',full_name:'doha hamami',age:3}
+function ChildInfo(props){
+    const [value,setValue]=useState(0);
+    const {fullName,gender,birthDate,id}=props.info;
+    useEffect(()=>{
+        const token=localStorage.getItem('token');
+        const getpercentage=async()=>{
+        const res = await axios.get(`http://localhost:8080/api/patient/progress/${id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }});
+        setValue(res.data)
+        console.log(res.data);
+        }
+        getpercentage();
+        },[])
+    
     return (
-        
+         
         <div className="child-info-container">
         <div className='card-icon'>
-            {info.gender=='f'?<img src={boy_toddler} width={90} height={90}/> : <img src={girl_toddler} height={80} width={80}/>}
+            {gender=='f'?<img src={girl_toddler} width={90} height={90}/> : <img src={boy_toddler} height={80} width={80}/>}
         </div>
         <div className='child-info'>
-          <span><strong>{info.full_name}</strong></span>
-          <p>{info.age} months</p>
+          <span><strong>{fullName}</strong></span>
+          <p>{birthDate.slice(0,10)} </p>
           <div className="progress-wrapper">
-          <div className="progress-bar" style={{width: `${60}%`}}></div>
+          <div className="progress-bar" style={{width: `${value}%`}}></div>
           </div>
         </div>
         

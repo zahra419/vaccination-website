@@ -1,0 +1,42 @@
+.containers-row{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 4rem;
+    gap: 1rem;
+    
+}
+.container.pdb{
+    margin: 0;
+    height: 200px;
+}
+.open{
+   background-color: green;
+   padding: 0.5em 1em;
+   border-radius: 4px;
+}
+.mount{
+   background-color: yellow;
+   padding: 0.5em 1em;
+   border-radius: 4px;
+}
+.nomount{
+    background-color: red;
+    padding: 0.5em 1em;
+   border-radius: 4px;
+}
+.storage-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.storage-content .main-info{
+    font-weight: 900;
+    font-size: larger;
+}
+.storage-content .sec-info{
+    font-weight: 700;
+    font-size: medium;
+}
+.search-title{
+    justify-self: start;
+}

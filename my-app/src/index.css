@@ -25,7 +25,7 @@ button {
   color: #fff;
   border: none;
   padding: 0.75rem;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -79,7 +79,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 input[type="date"]{
   padding: 0.5rem 0.8rem;
     border: 1.5px solid #007ACC;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #007ACC;
@@ -91,4 +91,81 @@ input[type="date"]{
   display: flex;
   flex-direction: column;
   width: 100vw;
+}
+/* table styling */
+.vaccine-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+}
+
+.vaccine-table thead th {
+  background: linear-gradient(135deg, #4A90E2, #6FB3FF);
+  color: #ffffff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+
+
+.vaccine-table td {
+  padding: 0.9rem;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.vaccine-table tbody tr:hover {
+  background: #f7fbff;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  align-self: flex-start;
+}
+.container{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 4rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.vaccine-table thead th {
+  background: linear-gradient(135deg, #4A90E2, #6FB3FF);
+  color: #ffffff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.vaccine-table thead th:first-child {
+  border-top-left-radius: 4px;
+}
+
+.vaccine-table thead th:last-child {
+  border-top-right-radius: 4px;
+}
+
+/* Body rows */
+.vaccine-table tbody tr {
+  background: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.vaccine-table tbody tr:hover {
+  background: #F0F6FF;
+}
+.vaccine-table td{
+    height: 3em;
 }

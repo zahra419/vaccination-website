@@ -4,16 +4,16 @@ public class LoginRequest {
 
     private String cin;
     private String password;
-    private String full_name;
+    private String fullName;
 
     //  Default constructor (required for @RequestBody deserialization)
     public LoginRequest() {}
 
     //  Constructor with parameters (optional)
-    public LoginRequest(String cin, String password,String full_name) {
+    public LoginRequest(String cin, String password,String fullName) {
         this.cin = cin;
         this.password = password;
-        this.full_name=full_name;
+        this.fullName=fullName;
     }
 
     // Getters and Setters
@@ -32,10 +32,10 @@ public class LoginRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setFullName(String full_name){
-        this.full_name=full_name;
+    public void setFullName(String fullName){
+        this.fullName=fullName;
     }
     public String getFullName(){
-        return full_name;
+        return fullName;
     }
 }

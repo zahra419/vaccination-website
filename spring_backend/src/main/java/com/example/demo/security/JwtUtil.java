@@ -32,6 +32,15 @@ public class JwtUtil {
                 .compact();
     }
 
+     // Method to extract all claims from token
+    public Claims extractAllClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
+
     // Extract username from token
     public String extractUsername(String token) {
         return Jwts.parserBuilder()

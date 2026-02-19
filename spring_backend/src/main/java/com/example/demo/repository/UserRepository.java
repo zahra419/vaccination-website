@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<Users, Long> {
 
     // Custom query to fetch only the fields needed for login
-   @Query("SELECT new com.example.demo.dto.LoginDto(u.cin, u.password, r.role_name,u.full_name) " +
+   @Query("SELECT new com.example.demo.dto.LoginDto(u.cin, u.password, r.roleName,u.fullName) " +
        "FROM Users u JOIN u.role r " +"WHERE u.cin = :cin")
     Optional<LoginDto> findUserForLogin(@Param("cin") String cin);
 }

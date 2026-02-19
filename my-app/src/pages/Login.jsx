@@ -15,7 +15,6 @@ function Login(){
        const res=await axios.post("http://localhost:8080/api/login",{cin,password},
         { headers: { 'Content-Type': 'application/json' }});
        const token=res.data.token;
-       console.log(token);
        localStorage.setItem('token',token);
        const decoded=jwtDecode(token);
        console.log(decoded);
@@ -25,11 +24,12 @@ function Login(){
     }catch(err){ 
       console.log(err.response.data.status)
       setloginstatus(err.response.data.error);
+      setcin("");
+      setpassword("");
       if(err.response.status>=500){
         navigate('/server-erreur');
       }
-      setcin("");
-      setpassword("");
+      
        
        
     }

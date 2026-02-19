@@ -45,7 +45,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/login").permitAll()
                 .requestMatchers("/api/dba/**").hasRole("DBA")
                 .requestMatchers("/api/doctor/**").hasRole("DOCTOR")
-                .requestMatchers("/api/patient/**").hasRole("PATIENT")
+                .requestMatchers("/api/patient","/api/patient/**").hasRole("PATIENT")
                 .anyRequest().authenticated()
             );
 

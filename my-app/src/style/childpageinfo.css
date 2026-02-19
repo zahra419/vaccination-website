@@ -1,0 +1,170 @@
+.schedule-card {
+  margin: 1rem 4rem;
+  border-radius: 4px;
+  padding: 1em;
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(107, 114, 128);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.upcoming , .history{
+  width: 91%;
+}
+.section-title{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 4rem;
+  color: #374151;
+}
+.schedule-container {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  
+}
+
+.schedule-container button{
+  width: 400px;
+  background-color: #2FB7A3
+}
+.form-container {
+  margin: 0 4em;
+  padding: 1em;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+ 
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.form-container input,
+.form-container select {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  width: 60%;
+  align-self: center;
+}
+
+.form-container button {
+  margin-top: 0.5rem;
+  width: 200px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.12);
+  overflow-x: auto;
+}
+.table-title{
+  color:#4A90E2;
+  padding-bottom: 0.5rem;
+}
+
+
+.progress-wrapper {
+  
+  width: 100%;
+  height: 10px;
+  background-color: #E9F1FB; /* page background tone */
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: #2FB7A3;
+  transition: width 0.4s ease;
+}
+ 
+.child-info-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: stretch;
+  gap:0.5em;
+  margin: 1em 4em;
+  border-radius: 4px;
+  padding: 1em;
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(107, 114, 128);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.table-container{
+  display: flex;
+  justify-content: center;
+  margin: 1em 4em;
+  border-radius: 0;
+  padding: 1em;
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(107, 114, 128);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Table base */
+.vaccination-table {
+  width: 70%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #2C3E50;
+}
+
+
+.child-info {
+    margin-left: 1em;
+    min-width: 15rem;
+}
+
+.progress-wrapper {
+  width: 100%;
+  height: 10px;
+  background-color: #E9F1FB; /* page background tone */
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.child-info-container, .schedule-card{
+display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: stretch;
+  gap:0.5em;
+  margin: 1em 4em;
+  border-radius: 0.5em;
+  padding: 1em;
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(107, 114, 128);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.child-info {
+    margin-left: 1em;
+    min-width: 15rem;
+}

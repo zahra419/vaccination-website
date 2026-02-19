@@ -7,7 +7,7 @@ function Navbar (){
     useEffect(()=>{
       const token = localStorage.getItem('token');
       const decoded=jwtDecode(token);
-      setUserName(decoded.full_name);
+      setUserName(decoded.full_name.toUpperCase());
     },[])
       const navigate=useNavigate()
     const logouthandler=()=>{

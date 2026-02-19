@@ -1,10 +1,14 @@
+import DbaInfoContainer from "../components/infocontainers";
+import TablespaceOverview from "../components/tablespace";
+import '../style/dba.css';
 
 function Dba (){
 
 
     return(
         <>
-        <h1>it's dba page</h1>
+        <DbaInfoContainer/>
+        <TablespaceOverview/>
         </>
     )
 

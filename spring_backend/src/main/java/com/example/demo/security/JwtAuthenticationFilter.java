@@ -4,10 +4,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.lang.Collections;
+
 import java.io.IOException;
+import java.util.List;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -25,6 +32,37 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         // Your JWT logic
-        filterChain.doFilter(request, response);
+        String authHeader = request.getHeader("Authorization");
+        
+        
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+            try {
+                if (!jwtUtil.isTokenExpired(token)) {
+                    Claims claims = jwtUtil.extractAllClaims(token);
+                    String cin = claims.getSubject();
+                    String role = claims.get("role", String.class);
+                    
+
+                    List<SimpleGrantedAuthority> authorities = List.of(
+                            new SimpleGrantedAuthority("ROLE_" + role.toUpperCase())
+                    );
+                   
+                    UsernamePasswordAuthenticationToken authToken =
+                            new UsernamePasswordAuthenticationToken(cin, null, authorities);
+
+                    SecurityContextHolder.getContext().setAuthentication(authToken); 
+                }
+            } catch (Exception e) {
+                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                System.out.println("JWT processing error: " + e.getMessage());
+                return;
+            }
+        }
+        
+    
+    filterChain.doFilter(request, response);
+    System.out.println("JWT FILTER CALLED");
     }
+    
 }

@@ -1,60 +1,47 @@
 package com.example.demo.model;
 import java.sql.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "users")
-public class Users {
+@Table(name = "child")
+public class Child {
 
    
-    @Column(name="telephone")
-    private String telephone;
+    @Column(name="cin")
+    private String cin;
     @Column(name="full_name")
     private String fullName;
     @Id
-    @Column(name="cin")
-    private String cin;
-    @Column(name="password")   
-    private String password;
+    @Column(name = "child_id")
+    private Long childId;
     @Column(name="gender")
     private String gender;
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
     @Column(name = "birth_date")
     private Date birthDate;
   
+  
 
-    public Users() {}
+    public Child() {}
 
-    public Users(String telephone, String fullName, String cin, String password,String gender, Role role,Date birthDate) {
+    public Child(Long childId, String fullName,String gender,Date birthDate,String cin) {
         this.fullName = fullName;
         this.cin = cin;
-        this.password = password;
-        this.role = role;
         this.gender=gender;
         this.birthDate=birthDate;
-        this.telephone=telephone;
+        this.childId=childId;
+       
     }
-    
     public void setFullName(String fullName){this.fullName=fullName;}
     public String getFullName(){return this.fullName;}
     public void setCin(String cin){this.cin=cin;}
     public String getCin(){return this.cin;}
-    public void setPassword(String password){this.password=password;}
-    public String getPassword(){return this.password;}
     public void setBirthDate(Date birthDate){this.birthDate=birthDate;}
     public Date getBirthDate(){return this.birthDate;}
-    public void setRole(Role role){this.role=role;}
-    public Role getRole(){return this.role;}
     public void setGender(String gender){this.gender=gender;}
     public String setGender(){return this.gender;}
-    public void setTelephone(String telephone){this.telephone=telephone;}
-    public String setTelephone(){return this.telephone;}
+    public void setChildId(Long childId){this.childId=childId;}
+    public Long setChildId(){return (Long) this.childId;}
 }

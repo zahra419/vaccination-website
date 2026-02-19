@@ -5,7 +5,7 @@ public class LoginResponse {
     private String token;
     private String cin;
     private String role;
-    private String full_name;
+    private String fullName;
 
   
     public LoginResponse() {}
@@ -13,11 +13,11 @@ public class LoginResponse {
         this.token=token;
     }
 
-    public LoginResponse(String token, String cin, String role,String full_name) {
+    public LoginResponse(String token, String cin, String role,String fullName) {
         this.token = token;
         this.cin = cin;
         this.role = role;
-        this.full_name=full_name;
+        this.fullName=fullName;
     }
 
     // Getters and setters
@@ -44,10 +44,10 @@ public class LoginResponse {
     public void setRole(String role) {
         this.role = role;
     }
-    public void setFullName(String full_name){
-        this.full_name=full_name;
+    public void setFullName(String fullName){
+        this.fullName=fullName;
     }
     public String getFullName(){
-        return this.full_name;
+        return this.fullName;
     }
 }

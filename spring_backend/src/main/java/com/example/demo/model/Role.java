@@ -1,4 +1,5 @@
 package com.example.demo.model;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -10,33 +11,33 @@ public class Role {
 
     @Id
     @Column(name="role_id")
-    private Long role_id;
+    private Long roleId;
 
-    @Column(name = "role_name")
-    private String role_name;
+    @Column(name = "role_name",nullable = false)
+    private String roleName;
 
     // Constructors
     public Role() {}
 
-    public Role(Long roleId, String role_name) {
-        this.role_id = roleId;
-        this.role_name = role_name;
+    public Role(Long roleId, String roleName) {
+        this.roleId = roleId;
+        this.roleName = roleName;
     }
 
     // Getters and Setters
     public Long getRoleId() {
-        return role_id;
+        return roleId;
     }
 
-    public void setRoleId(Long role_id) {
-        this.role_id = role_id;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
     public String getRoleName() {
-        return role_name;
+        return roleName;
     }
 
-    public void setRoleName(String role_name) {
-        this.role_name = role_name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }
