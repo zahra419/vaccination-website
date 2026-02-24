@@ -166,3 +166,15 @@
   padding: 0;
   width: fit-content;
 }
+.btn-status:disabled{
+  background-color: #a4a4a5;
+  color: #fff;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.title-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+}

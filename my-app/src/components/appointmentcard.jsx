@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import boy_toddler from '../assets/boy_toddler.svg'
 import girl_toddler from '../assets/girl_toddler.svg'
 import axios from 'axios';
-function AppointmentCard(){
+function AppointmentCard({triggerRefresh}) {
   const [status,setStatus]=useState('none');
   const [info, setInfo]=useState([])
   useEffect(()=>{
@@ -13,6 +13,7 @@ function AppointmentCard(){
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             }});
+            console.log(res.data);
       setInfo(res.data)
       
       
@@ -22,27 +23,41 @@ function AppointmentCard(){
   },[])
   const acceptHandle=async(id)=>{
     const token=localStorage.getItem('token');
-      const res=await axios.put(`http://localhost:8080/api/doctor/accept/${id}/status?=status=accepted`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }});
-    console.log(res)
-    setStatus('Accepted')
+    const res=await axios.put(`http://localhost:8080/api/doctor/accept/${id}/status`, null,
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    params: { status: 'accepted' } // query param
+  });
+    console.log(res);
+    if(res.status=200){
+      setStatus('Accepted')
+      triggerRefresh();
+    }
+      
 
   }
   const rejectHandle=async()=>{
     const token=localStorage.getItem('token');
-    const res=await axios.put(`http://localhost:8080/api/doctor/accept/${id}/status?=status=rejected`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }});
-      console.log(res);
-    setStatus('Rejected');
+    const res=await axios.put(`http://localhost:8080/api/doctor/accept/${id}/status`, null,
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    params: { status: 'rejected' } // query param
+  });
+    if(res.status=200){
+      setStatus('Rejected')
+      triggerRefresh();
+    }
   }
     return (
       <>
+      <h2 className="section-title">Booking Requests</h2>
+      <div className='title-content'>{info.length===0 && <p>No pending appointments</p>}</div>
      {info.map((item)=>(
       <div className="card" key={item.appointmentId}>
         <div className='card-info'>
@@ -64,7 +79,7 @@ function AppointmentCard(){
           <button className='btn-primary'onClick={()=>acceptHandle(item.appointmentId)}>Accept</button>
           <button className='btn-secondary' onClick={()=>rejectHandle(item.appointmentId)}>Reject</button>
           </>
-          : <button className='btn-status'>{status}</button>
+          : <button className='btn-status' disabled={true}>{status}</button>
 }
         </div>
         </div>    

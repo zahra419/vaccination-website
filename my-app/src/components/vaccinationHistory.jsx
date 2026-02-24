@@ -19,9 +19,11 @@ function VaccinationHistory({childId}){
     },[])
   
     return(
+    
         
         <div className="container history">
        <h2 className="section-title">Vaccination History</h2>
+       {history.length>0 ?
        <table className='vaccine-table'>
             <thead>
             <tr>
@@ -41,8 +43,9 @@ function VaccinationHistory({childId}){
             </tr>)}
             </tbody>
         </table>
+        : <span>No vaccination history available</span>}
         </div>
-       
+        
     )
 }
 export default VaccinationHistory;

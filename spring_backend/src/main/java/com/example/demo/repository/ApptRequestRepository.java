@@ -13,7 +13,7 @@ public interface ApptRequestRepository extends JpaRepository<Appointment,Integer
 
       @Query(
         value = "SELECT a.appointment_id AS appointmentId, " +
-                "u.full_name AS fullName, " +
+                "c.full_name AS fullName, " +
                 "c.gender AS gender, " +
                 "v.vaccin_name AS vaccinName, " +
                 "a.appointment_date AS appointmentDate " +

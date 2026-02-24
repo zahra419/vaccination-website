@@ -1,9 +1,6 @@
 import {Navigate} from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
-<<<<<<< HEAD
-=======
 
->>>>>>> fd87f22 (updates/fixes)
 
 function PrivateRoute({ children, role }) {
   const token = localStorage.getItem("token");

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.example.demo.dto.AllAppointmentDto;
 import com.example.demo.dto.ApptRequestDto;
 import com.example.demo.dto.HistoryDto;
 import com.example.demo.model.Appointment;
@@ -62,11 +62,12 @@ public class  DoctorController {
         System.out.println(doctorCin);
         return appointmentService.getPendingAppointment(doctorCin);
     }
-   /*  @PutMapping("/accept/{id}/status")
-public ResponseEntity<Appointment> updateStatus(
-        @PathVariable Integer id,
+     @PutMapping("/accept/{id}/status")
+    public ResponseEntity<Appointment> updateStatus(
+        @PathVariable Long id,
         @RequestParam String status) {
-
+      System.out.println("id value is"+id);
+      System.out.println("status value is"+status);
     Appointment appointment = appointmentService.getAppointmentById(id);
     if (appointment == null) {
         return ResponseEntity.notFound().build();
@@ -75,7 +76,14 @@ public ResponseEntity<Appointment> updateStatus(
     appointment.setStatus(status);
     Appointment updated = appointmentService.updateAppointment(appointment);
     return ResponseEntity.ok(updated);
-}*/
+    }
+    @GetMapping("/appointmentsTable")
+    public List <AllAppointmentDto> getAllAppointments(Authentication auth){
+        String doctorCin=auth.getName();
+        System.out.println(doctorCin);
+        return appointmentService.getAllAppointmentsByDoctorCin(doctorCin);
+    }
+
 
 
     
