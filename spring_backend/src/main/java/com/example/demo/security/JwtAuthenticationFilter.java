@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.lang.Collections;
 
 import java.io.IOException;
 import java.util.List;
@@ -62,7 +61,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         
     
     filterChain.doFilter(request, response);
-    System.out.println("JWT FILTER CALLED");
     }
     
 }

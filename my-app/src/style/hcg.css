@@ -1,6 +1,4 @@
 .cards-container{
-  width: 95%;
-  margin: 1rem 4rem;
   max-height: 20rem;
   overflow-y: auto;
 }
@@ -10,7 +8,7 @@
   justify-content: space-between;
   align-items: stretch;
   gap:0.5em;
-  margin-bottom: 0.5em;
+  margin: 1em 2em;
   border-radius: 4px;
   padding: 1em;
   background: #ffffff;
@@ -29,7 +27,6 @@
   gap: 0.5rem;
 }
 .btn-primary , .btn-secondary{
-  width: 12em;
   padding: 0.375em 0.5em;
   text-align: center;
   font-size: 0.75rem;
@@ -119,17 +116,17 @@
   font-weight:600;
 }
 
-.inline-views{
+.container1{
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  margin: 0 4rem;
-  gap: 0.5em;
-  width: 95%;
-
-}
-.inline-views > *{
-  margin: 0 0 1rem 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1em 2em;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", sans-serif;
 }
 .info-text{
   color: #7a828a;
@@ -177,4 +174,7 @@
   justify-content: center;
   align-items: center;
   height: max-content;
+}
+.appt{
+  min-width: 95px;
 }

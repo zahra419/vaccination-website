@@ -12,7 +12,6 @@ function VaccinCard() {
     age: ""
   });
 
-  // ✅ Load vaccines list
   const fetchVaccins = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -32,12 +31,12 @@ function VaccinCard() {
     }
   };
 
-  // ✅ Load data when page opens
+
   useEffect(() => {
     fetchVaccins();
   }, []);
 
-  // ✅ Handle form change
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -47,7 +46,7 @@ function VaccinCard() {
     }));
   };
 
-  // ✅ Submit new vaccine
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -72,10 +71,9 @@ function VaccinCard() {
         }
       );
 
-      // ✅ Refresh table after adding vaccine
+      
       fetchVaccins();
 
-      // Reset form
       setForm({
         name: "",
         fabricant: "",
@@ -92,7 +90,7 @@ function VaccinCard() {
     <div className="container">
       <h2 className="section-title">Vaccine Management</h2>
 
-      {/* Vaccine Table */}
+     
       <table className="vaccine-table">
         <thead>
           <tr>
@@ -113,12 +111,12 @@ function VaccinCard() {
         </tbody>
       </table>
 
-      {/* Add Vaccine Button */}
+     
       <button className="add-btn" onClick={() => setShowForm(true)}>
         + Add Vaccine
       </button>
 
-      {/* Add Vaccine Form */}
+     
       {showForm && (
         <form className="add-vaccine-form" onSubmit={handleSubmit}>
           <input

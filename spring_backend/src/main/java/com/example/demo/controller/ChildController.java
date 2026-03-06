@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.Authentication;
+
+import com.example.demo.dto.ApptRequestDto;
 import com.example.demo.dto.ChildDto;
 import com.example.demo.dto.DoctorDto;
 import com.example.demo.dto.HistoryDto;
@@ -23,7 +24,6 @@ import com.example.demo.service.HistoryService;
 import com.example.demo.service.PercentageService;
 import com.example.demo.service.UpcomingService;
 
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -84,7 +84,10 @@ public class ChildController {
     public Appointment addAppointment(@RequestBody Appointment newAppointment){
         System.out.println(newAppointment);
         return appointmentService.addAppointment(newAppointment);
-        //change doctordto
+        
     }
-    
+    @GetMapping("/bookedappt/{id}")
+    public ApptRequestDto getLastestChildAppointment(@PathVariable long id ){
+        return appointmentService.getLatestChildAppointment(id);
+    }
 }

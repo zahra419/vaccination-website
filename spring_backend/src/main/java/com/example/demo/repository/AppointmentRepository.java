@@ -8,6 +8,6 @@ import com.example.demo.model.Appointment;
 
 @Repository
 public interface AppointmentRepository extends JpaRepository<Appointment,Long>{
-    
+  
 }
 

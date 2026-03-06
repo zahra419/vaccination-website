@@ -6,10 +6,10 @@ function Dba (){
 
 
     return(
-        <>
+        <div className="dbaPage">
         <DbaInfoContainer/>
         <TablespaceOverview/>
-        </>
+        </div>
     )
 
 }

@@ -21,7 +21,8 @@ public interface SearchVaccinHistoryRepository extends JpaRepository<HistoryVacc
             h.vaccins.vaccinName,
             h.center.centerName,
             h.doctorCin.fullName,
-            h.vaccinationDate
+            h.vaccinationDate,
+            h.child.fullName
         )
         FROM HistoryVaccination h
         WHERE h.child.fullName = :fullName

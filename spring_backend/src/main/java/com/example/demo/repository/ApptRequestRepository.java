@@ -9,7 +9,7 @@ import com.example.demo.model.Appointment;
 import com.example.demo.model.Request;
 
 @Repository
-public interface ApptRequestRepository extends JpaRepository<Appointment,Integer>{
+public interface ApptRequestRepository extends JpaRepository<Appointment,Long>{
 
       @Query(
         value = "SELECT a.appointment_id AS appointmentId, " +
@@ -26,4 +26,18 @@ public interface ApptRequestRepository extends JpaRepository<Appointment,Integer
     )
   
     List<ApptRequestDto> findPendingAppointment(@Param("doctorCin") String doctorCin);
+
+    @Query(
+        value = "SELECT c.center_name AS centerName, " +
+                "u.full_name AS fullName, " +
+                "v.vaccin_name AS vaccinName, " +
+                "a.appointment_date AS appointmentDate, " +
+                "a.status as status " +
+                "FROM appointment a " +
+                "join centers c on a.center_id = c.center_id " +
+                "JOIN vaccins v ON a.vaccin_id = v.vaccin_id " +
+                "JOIN users u ON a.doctor_cin = u.cin " +
+                "WHERE a.child_id = :childId order by a.appointment_date desc fetch first 1 rows only",
+        nativeQuery = true)
+    ApptRequestDto findLatestChildAppointment(@Param("childId") Long childId);
 }

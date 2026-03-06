@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import ChildInfo from "../components/childInfo";
 import VaccinSchedule from "../components/vaccinSchedule"
@@ -8,7 +7,6 @@ function ChildDetails(){
     const {id}=useParams();
     const location=useLocation();
     const {fullName,gender,birthDate}=location.state || {}
-    const schedule={id:1,vaccin:'sdfsdf',date:'12-07-2024'}
     console.log(fullName,gender,birthDate)
    
     /*useEffect(()=>{

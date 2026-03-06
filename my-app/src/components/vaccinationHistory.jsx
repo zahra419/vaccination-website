@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import getValueInDate from '../services/getAgeInMonths'
+import toTitleCase from "../functions/toTitleCase";
 
 function VaccinationHistory({childId}){
     const [history,setHistoy]=useState([]);
@@ -37,7 +37,7 @@ function VaccinationHistory({childId}){
             <tbody>{history.map((item,index)=><tr key={index}>
              <td>{item.vaccinName}</td>
             <td>{item.centerName}</td>
-            <th>{item.doctorFullName}</th>
+            <th>{toTitleCase(item.doctorFullName)}</th>
             <td>{item.vaccinationDate.slice(0,10)}</td>
             <td className="status Done">Done</td>
             </tr>)}

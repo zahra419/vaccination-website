@@ -81,6 +81,7 @@ function ScheduleForm(props){
               name="appointmentDate"
               value={form.appointmentDate}
               onChange={handleChange}
+              min={new Date().toISOString().split("T")[0]}
               required
             />
           </label>
@@ -123,4 +124,3 @@ function ScheduleForm(props){
     )
 }
 export default ScheduleForm;
-/**/

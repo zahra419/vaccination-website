@@ -31,7 +31,6 @@ public class  DoctorController {
     private final VaccinService vaccinService;
     private final AppointmentService appointmentService;
 
-    // Single constructor with both services
     public DoctorController( SearchService searchService,VaccinService vaccinService,AppointmentService appointmentService) {
         this.vaccinService=vaccinService;
         this.searchService = searchService;
@@ -39,7 +38,6 @@ public class  DoctorController {
     }
 
 
-    // Page 2 – Vaccination history of one child
     @GetMapping("/search")
     public List<HistoryDto> getVaccinationHistory(@RequestParam("fullName") String fullName) {
         System.out.println("the name is "+fullName);

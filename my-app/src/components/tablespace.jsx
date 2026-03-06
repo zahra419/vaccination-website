@@ -25,7 +25,7 @@ function TablespaceOverview (){
         }
         
     return (
-<div className="container vaccin">
+<div className="container">
 <h2 className="section-title">Tablespace Overview</h2>
 <table className="vaccine-table">
           <thead>

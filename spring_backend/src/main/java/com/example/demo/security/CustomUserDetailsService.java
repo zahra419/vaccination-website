@@ -55,7 +55,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         LoginDto loginDto = userRepository.findUserForLogin(cin)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        // ✅ Convert role from DB into Spring Security authority
+        //  Convert role from DB into Spring Security authority
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + loginDto.getRoleName().toUpperCase());
 
         // Build Spring Security UserDetails

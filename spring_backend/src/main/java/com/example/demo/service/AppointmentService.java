@@ -40,5 +40,8 @@ public class AppointmentService {
     public List <AllAppointmentDto> getAllAppointmentsByDoctorCin(String doctorCin){
         return allAppointmentRepository.findAllAppointmentsByDoctorCin(doctorCin);
     }
+    public ApptRequestDto getLatestChildAppointment(Long childId){
+        return apptRequestRepository.findLatestChildAppointment(childId);
+    }
 
 }

@@ -1,4 +1,3 @@
-import './App.css'
 import { Routes,Route,Navigate} from 'react-router-dom'
 import Doctor from './pages/Doctor'
 import Dba from './pages/Dba'

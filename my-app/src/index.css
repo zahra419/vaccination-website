@@ -1,6 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   color: #2C3E50;
   background-color: #F5F9FF;;
   font-synthesis: none;
@@ -10,14 +18,29 @@
   --primary-color:#4A90E2;
 }
 
-
-
 html, body {
   margin: 0;
-  padding: 0;
-  width: 100%;
   height: 100%;
 }
+
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;   /* takes remaining space below navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+}
+
+
+
+
 
 /* Button */
 button {
@@ -87,14 +110,14 @@ input[type="date"]{
     transition: border-color 0.3s, box-shadow 0.3s;
     outline: none;
 }
-.detailPage{
+.detailPage, .doctorPage, .dbaPage{
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 /* table styling */
 .vaccine-table {
-  width: 90%;
+  width: 80%;
   border-collapse: collapse;
   margin: 1.5rem auto;
 }
@@ -128,12 +151,11 @@ input[type="date"]{
   align-self: flex-start;
 }
 .container{
-  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 4rem;
   padding: 1rem;
+  margin: 1em 2em;
   background: #ffffff;
   border-radius: 4px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);

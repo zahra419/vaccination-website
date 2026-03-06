@@ -55,7 +55,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // ✅ REQUIRED FOR CORS
+    //  REQUIRED FOR CORS
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
 

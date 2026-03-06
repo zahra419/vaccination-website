@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 function BookedAppointmentsTable({refreshKey}) {
   const [appointments, setAppointments] = useState([]);
-  // Example list of appointments
- /* const appointments = [
-    { id: 1, child: "Alice", gender: "f", vaccin: "MMR", date: "2026-02-15", status: "Booked" },
-    { id: 2, child: "Bob", gender: "m", vaccin: "Polio", date: "2026-02-16", status: "Rejected" },
-    { id: 3, child: "Charlie", gender: "m", vaccin: "Hepatitis B", date: "2026-02-15", status: "Booked" },
-    { id: 4, child: "Diana", gender: "f", vaccin: "MMR", date: "2026-02-13", status: "Booked" },
-  ];*/
+
   useEffect(() => {
     const token=localStorage.getItem("token");
     const getAllAppointments=async()=>{
@@ -24,7 +18,6 @@ function BookedAppointmentsTable({refreshKey}) {
 
   }, [refreshKey]);
 
-  // Initialize selectedDate to today
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -33,13 +26,12 @@ function BookedAppointmentsTable({refreshKey}) {
 
   const [selectedDate, setSelectedDate] = useState(todayDate);
 
-  // Filter only Booked appointments for selected date
   const bookedAppointments = appointments
     .filter((appt) => appt.status === "accepted" && appt.appointmentDate.slice(0,10) === selectedDate)
     .sort((a, b) => new Date(a.appointmentDate) - new Date(b.appointmentDate));
   
   return (
-    <div className="container vaccin">
+    <div className="container">
       <h2 className="section-title">Booked Appointments</h2>
 
       <div className="date-picker">

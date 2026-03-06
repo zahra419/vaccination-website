@@ -22,7 +22,6 @@ function Login(){
        else if (decoded.role === 'doctor') navigate('/doctor');
        else navigate('/patient');
     }catch(err){ 
-      console.log(err.response.data.status)
       setloginstatus(err.response.data.error);
       setcin("");
       setpassword("");

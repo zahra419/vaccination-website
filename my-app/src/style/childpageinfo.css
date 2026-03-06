@@ -8,24 +8,29 @@
   box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.upcoming , .history{
-  width: 91%;
-}
+
 .section-title{
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 1rem 4rem;
+  margin: 1rem;
+  flex: 1;
   color: #374151;
 }
 .schedule-container {
-  width: inherit;
+  width:95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1em;
   
 }
-
+.upcoming-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  width: 95%;
+}
 .schedule-container button{
   width: 400px;
   background-color: #2FB7A3
@@ -97,25 +102,11 @@
   transition: width 0.4s ease;
 }
  
-.child-info-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: stretch;
-  gap:0.5em;
-  margin: 1em 4em;
-  border-radius: 4px;
-  padding: 1em;
-  background: #ffffff;
-  font-family: "Segoe UI", sans-serif;
-  color: rgb(107, 114, 128);
-  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+
 .table-container{
   display: flex;
   justify-content: center;
-  margin: 1em 4em;
+  margin: 1em ;
   border-radius: 0;
   padding: 1em;
   background: #ffffff;
@@ -150,20 +141,13 @@
 }
 
 .child-info-container, .schedule-card{
-display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: stretch;
   gap:0.5em;
-  margin: 1em 4em;
-  border-radius: 0.5em;
-  padding: 1em;
-  background: #ffffff;
-  font-family: "Segoe UI", sans-serif;
-  color: rgb(107, 114, 128);
-  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .child-info {
     margin-left: 1em;
     min-width: 15rem;

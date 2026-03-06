@@ -7,16 +7,26 @@ public class HistoryDto {
     private String centerName;
     private String doctorFullName;
     private Date vaccinationDate;
+    private String childFullName;
 
-    public HistoryDto(String vaccinName,String centerName,String doctorFullName,Date vaccinationDate){
+    public HistoryDto(String vaccinName,String centerName,String doctorFullName,Date vaccinationDate,String childFullName){
         this.vaccinName=vaccinName;
         this.centerName=centerName;
         this.doctorFullName=doctorFullName;
         this.vaccinationDate=vaccinationDate;
+        this.childFullName=childFullName;
     }
  
     // Getters and Setters
+    public HistoryDto(){
 
+    }
+    public String getChildFullName(){
+        return this.childFullName;
+    }
+    public void setChildFullName(String childFullName){
+        this.childFullName=childFullName;
+    }
     public String getVaccinName() {
         return vaccinName;
     }
